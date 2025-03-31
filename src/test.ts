@@ -1,3 +1,3 @@
 export const test = () => {
-    console.log('new script added');
+	console.log('new script added');
 };
