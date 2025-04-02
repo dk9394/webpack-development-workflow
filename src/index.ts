@@ -1,3 +1,3 @@
-import * as testModule from './test';
+import { coreJsModule } from './core-js-module';
 
-testModule.test();
+coreJsModule();

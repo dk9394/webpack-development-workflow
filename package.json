@@ -4,7 +4,8 @@
 	"description": "Webpack development workflow",
 	"main": "index.js",
 	"scripts": {
-		"start": "webpack serve",
+		"start:dev": "webpack serve",
+		"start:prod": "NODE_ENV=production webpack serve",
 		"build": "webpack",
 		"format": "prettier --write .",
 		"format-check": "prettier --check .",

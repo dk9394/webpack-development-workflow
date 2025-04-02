@@ -1,8 +1,10 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 
-module.exports = {
-	mode: 'development',
+const mode = process.env.NODE_ENV || 'development';
+
+const config = {
+	mode: mode, // Ensure you're in development mode
 	entry: './src/index.ts',
 	module: {
 		rules: [
@@ -38,3 +40,10 @@ module.exports = {
 		hot: true, // Enable Hot Module Replacement
 	},
 };
+
+const isProductionMode = mode === 'production' ? true : false;
+if (!isProductionMode) {
+	config.devtool = 'inline-source-map'; // Generates inline source maps
+}
+
+module.exports = config;
